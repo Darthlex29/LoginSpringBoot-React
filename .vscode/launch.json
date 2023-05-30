@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ModelosApiApplication<ModelosAPI>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "apiPostgres.ModelosAPI.ModelosApiApplication",
+            "projectName": "ModelosAPI",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
