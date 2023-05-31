@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { getUserEmail } from "../Services/UserService.jsx";
+import { getUserEmail, BuscarApi } from "../Services/UserService.jsx";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../Functions/UserContext.jsx";
 
@@ -71,6 +71,11 @@ export const Login = (props) => {
     }
   };
 
+  const consultarAPI = async () =>{
+    const usuario = await BuscarApi();
+    console.log(usuario)
+  }
+
   return (
     <div className="contenedor-login-auth">
       <h1>Login</h1>
@@ -91,7 +96,8 @@ export const Login = (props) => {
           placeholder="************"
         />
 
-        {/*  <button type="button" onClick={consultarAPI}>
+         {/**Este boton consulta todo lo que se encuentre en la tabla de usuarios. */
+         /* <button type="button" onClick={consultarAPI}>
           Consultar API
         </button> */}
         <button
@@ -110,6 +116,8 @@ export const Login = (props) => {
       >
         ¿No tienes una cuenta? Regístrate aquí
       </button>
+      {/**Esta parte genera un ingreso directo.  */
+      /* 
       <button
           className="btnIngreso"
           onClick={(e) => {
@@ -118,7 +126,7 @@ export const Login = (props) => {
           }}
         >
           Paso directo
-        </button>
+        </button> */}
     </div>
   );
 };
